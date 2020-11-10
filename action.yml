@@ -1,0 +1,9 @@
+name: 'Setup CEKit environment'
+description: 'Setup CEKit environment and add it to the PATH'
+runs:
+  using: "composite"
+  steps: 
+    - run: |
+        sudo apt-get install gcc libkrb5-dev
+        sudo pip install docker docker-squash cekit odcs[client]
+      shell: bash
